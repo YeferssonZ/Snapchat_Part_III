@@ -59,32 +59,125 @@
                                 </constraints>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="Iniciar Sesiòn"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Iniciar Sesión"/>
                                 <connections>
                                     <action selector="iniciarSesionTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Bp0-xi-vFu"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sCL-da-uQa">
+                                <rect key="frame" x="106" y="658" width="202.5" height="31"/>
+                                <color key="backgroundColor" systemColor="systemGreenColor"/>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" image="phone" catalog="system">
+                                    <attributedString key="attributedTitle">
+                                        <fragment content="  ">
+                                            <attributes>
+                                                <font key="NSFont" size="12" name="Helvetica"/>
+                                                <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                            </attributes>
+                                        </fragment>
+                                        <fragment content="Iniciar">
+                                            <attributes>
+                                                <font key="NSFont" size="12" name="Helvetica-Bold"/>
+                                                <font key="NSOriginalFont" size="12" name="Helvetica-Bold"/>
+                                                <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                            </attributes>
+                                        </fragment>
+                                        <fragment content=" ">
+                                            <attributes>
+                                                <font key="NSFont" size="12" name="Helvetica"/>
+                                                <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                            </attributes>
+                                        </fragment>
+                                        <fragment content="Sesión">
+                                            <attributes>
+                                                <font key="NSFont" size="12" name="Helvetica-Bold"/>
+                                                <font key="NSOriginalFont" size="12" name="Helvetica-Bold"/>
+                                                <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                            </attributes>
+                                        </fragment>
+                                        <fragment content=" ">
+                                            <attributes>
+                                                <font key="NSFont" size="12" name="Helvetica"/>
+                                                <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                            </attributes>
+                                        </fragment>
+                                        <fragment content="por">
+                                            <attributes>
+                                                <font key="NSFont" size="12" name="Helvetica-Bold"/>
+                                                <font key="NSOriginalFont" size="12" name="Helvetica-Bold"/>
+                                                <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                            </attributes>
+                                        </fragment>
+                                        <fragment content=" ">
+                                            <attributes>
+                                                <font key="NSFont" size="12" name="Helvetica"/>
+                                                <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                            </attributes>
+                                        </fragment>
+                                        <fragment content="telefono">
+                                            <attributes>
+                                                <font key="NSFont" size="12" name="Helvetica-Bold"/>
+                                                <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                            </attributes>
+                                        </fragment>
+                                    </attributedString>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="iniciarSesionTelefonoTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="0ca-FL-pwa"/>
+                                </connections>
+                            </button>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Ingrese numero telefonico" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="R2o-8y-YRQ">
+                                <rect key="frame" x="107" y="599" width="200" height="34"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="200" id="LXB-sC-Ur5"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" textContentType="tel"/>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="-------- OR --------" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aFr-O0-CIv">
+                                <rect key="frame" x="130" y="511" width="154" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Telefono:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sDP-Mi-VCI">
+                                <rect key="frame" x="167" y="557" width="80" height="22"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="KaJ-0d-77p" firstAttribute="centerX" secondItem="qZh-UP-o05" secondAttribute="centerX" id="16O-Ag-Ij4"/>
+                            <constraint firstItem="qZh-UP-o05" firstAttribute="centerX" secondItem="aFr-O0-CIv" secondAttribute="centerX" id="1pL-7M-GjM"/>
+                            <constraint firstItem="aFr-O0-CIv" firstAttribute="centerX" secondItem="sDP-Mi-VCI" secondAttribute="centerX" id="7gD-5q-eHR"/>
                             <constraint firstItem="Wvz-V0-bdx" firstAttribute="centerX" secondItem="0yX-f0-3hz" secondAttribute="centerX" id="95F-EI-ARa"/>
                             <constraint firstItem="KaJ-0d-77p" firstAttribute="top" secondItem="0Bq-Vb-LUo" secondAttribute="bottom" constant="25" id="FVt-r9-O8c"/>
+                            <constraint firstItem="R2o-8y-YRQ" firstAttribute="top" secondItem="sDP-Mi-VCI" secondAttribute="bottom" constant="20" id="GRC-qT-xDQ"/>
                             <constraint firstItem="Wvz-V0-bdx" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="30" id="Hn3-jD-dwO"/>
+                            <constraint firstItem="sDP-Mi-VCI" firstAttribute="top" secondItem="aFr-O0-CIv" secondAttribute="bottom" constant="25" id="KRo-z7-mcN"/>
                             <constraint firstItem="iz5-7q-VDA" firstAttribute="centerX" secondItem="0Bq-Vb-LUo" secondAttribute="centerX" id="LJx-Cy-iib"/>
                             <constraint firstItem="Wvz-V0-bdx" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="OPC-V8-O1E"/>
                             <constraint firstItem="iz5-7q-VDA" firstAttribute="top" secondItem="0yX-f0-3hz" secondAttribute="bottom" constant="25" id="Rj1-d0-VpC"/>
                             <constraint firstItem="0yX-f0-3hz" firstAttribute="centerX" secondItem="iz5-7q-VDA" secondAttribute="centerX" id="SO2-Wy-ln8"/>
+                            <constraint firstItem="sCL-da-uQa" firstAttribute="top" secondItem="R2o-8y-YRQ" secondAttribute="bottom" constant="25" id="b8p-1E-BW8"/>
                             <constraint firstItem="0Bq-Vb-LUo" firstAttribute="top" secondItem="iz5-7q-VDA" secondAttribute="bottom" constant="25" id="dsr-HV-O2T"/>
+                            <constraint firstItem="R2o-8y-YRQ" firstAttribute="centerX" secondItem="sCL-da-uQa" secondAttribute="centerX" id="etj-fI-PGs"/>
+                            <constraint firstItem="aFr-O0-CIv" firstAttribute="top" secondItem="qZh-UP-o05" secondAttribute="bottom" constant="15" id="fXn-iS-Sgh"/>
                             <constraint firstItem="0Bq-Vb-LUo" firstAttribute="centerX" secondItem="KaJ-0d-77p" secondAttribute="centerX" id="jk8-QC-Jbs"/>
                             <constraint firstItem="0yX-f0-3hz" firstAttribute="top" secondItem="Wvz-V0-bdx" secondAttribute="bottom" constant="25" id="kgX-bL-9q5"/>
+                            <constraint firstItem="sDP-Mi-VCI" firstAttribute="centerX" secondItem="R2o-8y-YRQ" secondAttribute="centerX" id="qTN-Ja-Cxd"/>
                             <constraint firstItem="qZh-UP-o05" firstAttribute="top" secondItem="KaJ-0d-77p" secondAttribute="bottom" constant="30" id="ucK-JK-W8z"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="emailTextField" destination="iz5-7q-VDA" id="Vua-dq-8CZ"/>
                         <outlet property="passwordTextField" destination="KaJ-0d-77p" id="Yid-kG-FRR"/>
+                        <outlet property="phoneNumberTextField" destination="R2o-8y-YRQ" id="2Jw-cU-1Nv"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -94,8 +187,12 @@
     </scenes>
     <resources>
         <image name="login" width="512" height="512"/>
+        <image name="phone" catalog="system" width="128" height="115"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemGreenColor">
+            <color red="0.20392156862745098" green="0.7803921568627451" blue="0.34901960784313724" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

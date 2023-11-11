@@ -2,6 +2,10 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>CLIENT_ID</key>
+	<string>761822743998-m9tgl4cn2cnjqheup48ok67rg624ae3u.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.761822743998-m9tgl4cn2cnjqheup48ok67rg624ae3u</string>
 	<key>API_KEY</key>
 	<string>AIzaSyCI7Q3iXYhOtQfhfsJg6JhpWRTBEWPztbU</string>
 	<key>GCM_SENDER_ID</key>
@@ -26,5 +30,7 @@
 	<true></true>
 	<key>GOOGLE_APP_ID</key>
 	<string>1:761822743998:ios:c85191a9f6d1a723153def</string>
+	<key>DATABASE_URL</key>
+	<string>https://snapchat-a5612-default-rtdb.firebaseio.com</string>
 </dict>
 </plist>
