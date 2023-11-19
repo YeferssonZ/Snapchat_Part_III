@@ -9,6 +9,7 @@ import UIKit
 import FirebaseAuth
 import FirebaseCore
 import GoogleSignIn
+import FirebaseDatabase
 
 class iniciarSesionViewController: UIViewController {
 
@@ -25,9 +26,42 @@ class iniciarSesionViewController: UIViewController {
 
     // MARK: - Autenticación con Correo y Contraseña
     @IBAction func iniciarSesionTapped(_ sender: Any) {
+        // Intentar iniciar sesión
         Auth.auth().signIn(withEmail: emailTextField.text!, password: passwordTextField.text!) { (user, error) in
-            self.handleAuthResult(user, error)
+            print("Intentando Iniciar Sesión")
+            if error != nil {
+                print("Se presentó el siguiente error al iniciar sesión: \(error)")
+
+                // Mostrar alerta y dar opciones al usuario
+                let alerta = UIAlertController(title: "Error de Inicio de Sesión", message: "El usuario no existe. ¿Quieres crear uno?", preferredStyle: .alert)
+
+                // Acción para crear un nuevo usuario
+                let accionCrear = UIAlertAction(title: "Crear", style: .default) { (UIAlertAction) in
+                    // Redirigir al usuario a la pantalla de registro
+                    self.performSegue(withIdentifier: "registroSegue", sender: nil)
+                }
+
+                // Acción para cancelar
+                let accionCancelar = UIAlertAction(title: "Cancelar", style: .cancel, handler: nil)
+
+                // Agregar las acciones a la alerta
+                alerta.addAction(accionCrear)
+                alerta.addAction(accionCancelar)
+
+                // Mostrar la alerta
+                self.present(alerta, animated: true, completion: nil)
+            } else {
+                // Inicio de sesión exitoso
+                print("Inicio de Sesión Exitoso")
+                self.performSegue(withIdentifier: "iniciarsesionsegue", sender: nil)
+            }
         }
+    }
+
+    // MARK: - Crear Usuario Tapped
+    @IBAction func crearUsuarioTapped(_ sender: Any) {
+        // Transición a la vista de creación de usuario
+        self.performSegue(withIdentifier: "registroSegue", sender: nil)
     }
 
     // MARK: - Autenticación con Teléfono
@@ -54,7 +88,7 @@ class iniciarSesionViewController: UIViewController {
         if let error = error {
             print("Se presentó el siguiente error: \(error.localizedDescription)")
         } else {
-            print("Inicio de sesión exitoso")
+            print("Inicio de sesión exitoso por Teléfono")
             // Puedes realizar acciones adicionales aquí después de un inicio de sesión exitoso
         }
     }
@@ -86,6 +120,8 @@ class iniciarSesionViewController: UIViewController {
 
         Auth.auth().signIn(with: credential) { (user, error) in
             self.handleAuthResult(user, error)
+            // Después de iniciar sesión, realiza la transición
+            self.performSegue(withIdentifier: "iniciarsesionsegue", sender: nil)
         }
     }
 
@@ -117,6 +153,9 @@ class iniciarSesionViewController: UIViewController {
                 } else {
                     print("Inicio de sesión exitoso con Google")
                     // Puedes realizar acciones adicionales aquí después de un inicio de sesión exitoso
+
+                    // Después de iniciar sesión, realiza la transición
+                    self.performSegue(withIdentifier: "iniciarsesionsegue", sender: nil)
                 }
             }
         }
