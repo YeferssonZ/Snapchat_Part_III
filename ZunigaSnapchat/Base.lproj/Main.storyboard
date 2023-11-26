@@ -3,6 +3,7 @@
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -111,7 +112,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Pcq-5m-7Nh" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-881.15942028985512" y="0.0"/>
+            <point key="canvasLocation" x="-84" y="692"/>
         </scene>
         <!--Iniciar Sesion View Controller-->
         <scene sceneID="tne-QT-ifu">
@@ -338,7 +339,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-17.39130434782609" y="0.0"/>
+            <point key="canvasLocation" x="-84" y="0.0"/>
         </scene>
         <!--Snaps View Controller-->
         <scene sceneID="vgP-k2-rDr">
@@ -347,8 +348,20 @@
                     <view key="view" contentMode="scaleToFill" id="PGZ-Qa-n0X">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="gnM-KB-7R7">
+                                <rect key="frame" x="0.0" y="56" width="414" height="786"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </tableView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="v5U-1D-0Po"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="v5U-1D-0Po" firstAttribute="trailing" secondItem="gnM-KB-7R7" secondAttribute="trailing" id="F7w-rV-64z"/>
+                            <constraint firstItem="v5U-1D-0Po" firstAttribute="bottom" secondItem="gnM-KB-7R7" secondAttribute="bottom" id="HFC-Gv-mtx"/>
+                            <constraint firstItem="gnM-KB-7R7" firstAttribute="top" secondItem="v5U-1D-0Po" secondAttribute="top" id="bNM-s5-Z2n"/>
+                            <constraint firstItem="gnM-KB-7R7" firstAttribute="leading" secondItem="v5U-1D-0Po" secondAttribute="leading" id="gad-W0-ZhZ"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="RGX-3F-0g7">
                         <barButtonItem key="leftBarButtonItem" title="Cerrar Sesion" id="0uH-4h-Esn">
@@ -362,10 +375,89 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="tablaSnaps" destination="gnM-KB-7R7" id="KJY-OR-xqb"/>
+                        <segue destination="3rr-Eu-mqV" kind="show" identifier="versnapsegue" id="F7q-zQ-BBr"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qS9-y5-lX9" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1532" y="0.0"/>
+        </scene>
+        <!--Ver Snap View Controller-->
+        <scene sceneID="C0m-yJ-9Q4">
+            <objects>
+                <viewController id="3rr-Eu-mqV" customClass="VerSnapViewController" customModule="ZunigaSnapchat" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="uQK-LI-Kof">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Mensaje: " lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ero-UC-6p5">
+                                <rect key="frame" x="30" y="81" width="354" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Imagen enviada:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xMr-11-n9k">
+                                <rect key="frame" x="30" y="121.5" width="184" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Ddw-VU-uh7">
+                                <rect key="frame" x="30" y="162.5" width="354" height="240"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="240" id="aJe-ki-Ejf"/>
+                                </constraints>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0lP-xJ-yyE">
+                                <rect key="frame" x="100" y="432.5" width="214" height="31"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="tintColor" name="AccentColor"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain">
+                                    <attributedString key="attributedTitle">
+                                        <fragment content="REPRODUCIR">
+                                            <attributes>
+                                                <font key="NSFont" size="14" name="HelveticaNeue-Bold"/>
+                                                <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                            </attributes>
+                                        </fragment>
+                                    </attributedString>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="reproducirAudioTapped:" destination="3rr-Eu-mqV" eventType="touchUpInside" id="IQC-HU-nrn"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="Rld-hB-yyX"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="ero-UC-6p5" firstAttribute="leading" secondItem="Rld-hB-yyX" secondAttribute="leading" constant="30" id="74W-Q3-Y9n"/>
+                            <constraint firstItem="Ddw-VU-uh7" firstAttribute="top" secondItem="xMr-11-n9k" secondAttribute="bottom" constant="20" id="75K-82-bfr"/>
+                            <constraint firstItem="Rld-hB-yyX" firstAttribute="trailing" secondItem="0lP-xJ-yyE" secondAttribute="trailing" constant="100" id="GPK-Jb-JXb"/>
+                            <constraint firstItem="0lP-xJ-yyE" firstAttribute="leading" secondItem="Rld-hB-yyX" secondAttribute="leading" constant="100" id="REZ-A6-Fcj"/>
+                            <constraint firstItem="Rld-hB-yyX" firstAttribute="trailing" secondItem="xMr-11-n9k" secondAttribute="trailing" constant="200" id="Shn-du-1rM"/>
+                            <constraint firstItem="Rld-hB-yyX" firstAttribute="trailing" secondItem="ero-UC-6p5" secondAttribute="trailing" constant="30" id="WSE-hh-bnB"/>
+                            <constraint firstItem="xMr-11-n9k" firstAttribute="top" secondItem="ero-UC-6p5" secondAttribute="bottom" constant="20" id="XP5-hN-rtV"/>
+                            <constraint firstItem="Ddw-VU-uh7" firstAttribute="centerX" secondItem="0lP-xJ-yyE" secondAttribute="centerX" id="a5O-bX-Y6O"/>
+                            <constraint firstItem="ero-UC-6p5" firstAttribute="top" secondItem="Rld-hB-yyX" secondAttribute="top" constant="25" id="cXh-wx-emc"/>
+                            <constraint firstItem="xMr-11-n9k" firstAttribute="leading" secondItem="Rld-hB-yyX" secondAttribute="leading" constant="30" id="cZi-HD-gIt"/>
+                            <constraint firstItem="Rld-hB-yyX" firstAttribute="trailing" secondItem="Ddw-VU-uh7" secondAttribute="trailing" constant="30" id="v1v-eN-6I6"/>
+                            <constraint firstItem="0lP-xJ-yyE" firstAttribute="top" secondItem="Ddw-VU-uh7" secondAttribute="bottom" constant="30" id="xf7-Tf-wiO"/>
+                            <constraint firstItem="Ddw-VU-uh7" firstAttribute="leading" secondItem="Rld-hB-yyX" secondAttribute="leading" constant="30" id="zv6-eU-XPt"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="S1X-1m-46R"/>
+                    <connections>
+                        <outlet property="imageView" destination="Ddw-VU-uh7" id="bC9-UJ-FlI"/>
+                        <outlet property="lblMensaje" destination="ero-UC-6p5" id="34T-cr-yRU"/>
+                        <outlet property="reproducirAudioButton" destination="0lP-xJ-yyE" id="iAb-p7-QKy"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="v9J-W6-CBO" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1531.8840579710145" y="691.74107142857144"/>
         </scene>
         <!--Enviar Mensaje-->
         <scene sceneID="ycd-UH-GxF">
@@ -405,6 +497,15 @@
                                     <action selector="elegirContactoTapped:" destination="UK4-bY-9uJ" eventType="touchUpInside" id="csh-31-KGK"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6CH-ll-zf0">
+                                <rect key="frame" x="144" y="362" width="111" height="31"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="GRABAR"/>
+                                <connections>
+                                    <action selector="grabarAudioTapped:" destination="UK4-bY-9uJ" eventType="touchUpInside" id="Kzz-dU-eTy"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="hyM-Y7-8Z4"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -420,15 +521,23 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Enviar Mensaje" id="KbE-Gc-56j">
-                        <barButtonItem key="rightBarButtonItem" systemItem="camera" id="jX7-2G-RJV">
-                            <connections>
-                                <action selector="camaraTapped:" destination="UK4-bY-9uJ" id="iQm-fI-6Ef"/>
-                            </connections>
-                        </barButtonItem>
+                        <rightBarButtonItems>
+                            <barButtonItem systemItem="camera" id="jX7-2G-RJV">
+                                <connections>
+                                    <action selector="camaraTapped:" destination="UK4-bY-9uJ" id="iQm-fI-6Ef"/>
+                                </connections>
+                            </barButtonItem>
+                            <barButtonItem systemItem="organize" id="bjq-tp-Ynm">
+                                <connections>
+                                    <action selector="mediaTapped:" destination="UK4-bY-9uJ" id="ReB-eK-dew"/>
+                                </connections>
+                            </barButtonItem>
+                        </rightBarButtonItems>
                     </navigationItem>
                     <connections>
                         <outlet property="descripcionTextField" destination="DmQ-2W-K8F" id="vnZ-uj-lkC"/>
                         <outlet property="elegirContactoBoton" destination="u3p-W0-PJk" id="kfH-QH-Blw"/>
+                        <outlet property="grabarAudioBoton" destination="6CH-ll-zf0" id="5ro-rd-9Lc"/>
                         <outlet property="imageView" destination="0K9-tz-b5d" id="4Ec-pk-SPO"/>
                         <segue destination="QHe-6L-dLv" kind="show" identifier="seleccionarContactoSegue" id="wg6-Rb-Cb5"/>
                     </connections>
@@ -488,7 +597,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="vBQ-nV-Eh3"/>
+        <segue reference="QVV-hG-e8B"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="google.png" width="18" height="18"/>
@@ -496,6 +605,9 @@
         <image name="phone" catalog="system" width="128" height="115"/>
         <image name="rectangle.portrait.and.arrow.right.fill" catalog="system" width="128" height="108"/>
         <image name="sign" width="350" height="350"/>
+        <namedColor name="AccentColor">
+            <color red="1" green="0.79199999570846558" blue="0.15700000524520874" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
